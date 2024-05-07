@@ -1,0 +1,106 @@
+Dúvidas sobre o Código
+
+## Por que abriu a planilha antes de mandar a mensagem?
+A planilha é aberta antes do envio das mensagens para garantir que os dados dos clientes 
+estejam atualizados no momento do envio.
+
+
+## Por que iterou sobre cada linha da planilha antes de enviar a mensagem?
+A iteração sobre cada linha da planilha permite que o programa envie mensagens personalizadas 
+para cada cliente, informando o vencimento do serviço de forma individualizada.
+
+
+
+
+Explicações adicionais sobre o código
+
+### `on_press`
+`on_press` é uma função que é chamada quando uma tecla é pressionada.
+
+
+### `on_release`
+`on_release` é uma função que é chamada quando uma tecla é solta.
+
+
+### `listener`
+`listener` é um objeto que "escuta" as teclas e chama as funções `on_press` e `on_release`.
+
+
+### `getattr(sys, 'frozen', False)`
+`getattr(sys, 'frozen', False)` verifica se o script está sendo executado como um executável 
+gerado pelo PyInstaller. Se o script estiver congelado, o caminho de trabalho é alterado 
+para o diretório temporário onde os arquivos foram extraídos.
+
+
+### `os.chdir(sys._MEIPASS)`
+`os.chdir(sys._MEIPASS)` altera o diretório de trabalho para o diretório temporário onde 
+os arquivos foram extraídos pelo PyInstaller. Isso é necessário porque, quando 
+o script é congelado, ele não pode mais assumir que os arquivos estarão no diretório atual. 
+Então, esta linha garante que ele mude para o diretório correto para encontrar os arquivos 
+necessários.
+
+
+Diferença de Versões
+
+Versão auto_bot_v1
+Características:
+Envio de mensagens automatizado para clientes do WhatsApp.
+Utilização de bibliotecas como openpyxl, time, webbrowser, pyautogui e urllib.
+Mensagem personalizada de cobrança de pagamento.
+Diferenças em relação à versão anterior:
+Não possui tratamento de erros.
+Não fecha a aba do navegador após o envio da mensagem.
+
+Versão auto_bot_v2
+Características:
+Adicionado tratamento de exceções para lidar com erros durante o envio de mensagens.
+Fechamento da aba do navegador após o envio da mensagem.
+Diferenças em relação à versão anterior:
+Adicionado tratamento de exceções.
+Adicionado fechamento da aba do navegador após o envio da mensagem.
+
+Versão auto_bot_v3
+Características:
+Adicionado log de erros para registrar exceções durante o envio de mensagens.
+Fechamento da aba do navegador após o envio da mensagem.
+Diferenças em relação à versão anterior:
+Adicionado registro de erros em arquivo de log.
+
+Versão auto_bot_v4
+Características:
+Adicionado atalho para abrir o WebWhatsApp pressionando as teclas Ctrl + Alt + F12.
+Fechamento da aba do navegador após o envio da mensagem.
+Diferenças em relação à versão anterior:
+Adicionado atalho para abrir o WebWhatsApp.
+
+Versão auto_bot_v5
+Características:
+Corrigido o problema com o caminho de trabalho para o executável gerado pelo PyInstaller.
+Fechamento da aba do navegador após o envio da mensagem.
+Diferenças em relação à versão anterior:
+Corrigido o caminho de trabalho para o executável gerado pelo PyInstaller.
+
+Versão auto_bot_v6
+Características:
+Removido o tempo de espera para abrir o WhatsApp Web.
+Fechamento da aba do navegador após o envio da mensagem.
+Diferenças em relação à versão anterior:
+Tempo de espera para abrir o WhatsApp Web removido.
+
+Versão auto_bot_v7
+Características:
+Adicionada uma função enviar_mensagem() para reutilização do código.
+Fechamento da aba do navegador após o envio da mensagem.
+Diferenças em relação à versão anterior:
+Código refatorado com a adição de uma função enviar_mensagem().
+
+Versão auto_bot_v8_final
+Características:
+Adicionado um atalho para abrir o WebWhatsApp pressionando as teclas Ctrl + Alt + F12.
+Tratamento refinado de exceções para garantir o envio bem-sucedido de mensagens.
+Fechamento da aba do navegador após o envio da mensagem.
+Incluído o processo de criação de um executável usando o PyInstaller.
+Diferenças em relação à versão anterior:
+Atalho refinado para abrir o WebWhatsApp.
+Tratamento refinado de exceções.
+Adicionado processo de criação de um executável usando o PyInstaller.
