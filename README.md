@@ -1,0 +1,2 @@
+# Mensagem_WhatsApp_Auto
+ Este projeto automatiza o envio de mensagens via WhatsApp para clientes, permitindo o envio de lembretes de vencimento de serviços e mensagens de cobrança de forma personalizada. O programa lê os dados dos clientes de uma planilha Excel, abre o WhatsApp Web, envia as mensagens e fecha o WhatsApp Web após o envio. O usuário pode iniciar o programa pressionando Ctrl + Alt + F12. O código foi escrito em Python e utiliza as bibliotecas: "openpyxl", "webbrowser", "pyautogui", "logging"e "pynput"
