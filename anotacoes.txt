@@ -1,4 +1,4 @@
-Dúvidas sobre o Código
+Dúvidas sobre o Código!
 
 ## Por que abriu a planilha antes de mandar a mensagem?
 A planilha é aberta antes do envio das mensagens para garantir que os dados dos clientes 
