@@ -1,106 +1,67 @@
-# Automatização de Mensagens para Clientes via WhatsApp
+# 🤖 Automatização de Mensagens para Clientes via WhatsApp
 
-## O que é?
+## 📋 Descrição
 
-Este é um programa Python que automatiza o envio de mensagens para clientes via WhatsApp. 
-Ele lê uma planilha Excel que contém informações dos clientes, como nome, número de telefone 
-e data de vencimento do serviço. Com base nessas informações, o programa envia mensagens 
-personalizadas para cada cliente, lembrando-os do vencimento do serviço e fornecendo um link 
-para pagamento.
+Este é um script Python que automatiza o envio de mensagens via WhatsApp, utilizando uma planilha Excel com dados dos clientes (nome, telefone, data de vencimento). O programa envia mensagens personalizadas para lembrar os clientes do vencimento do serviço e fornece links para pagamento.
 
-## Como foi feito?
+## ⚙️ Tecnologias Utilizadas
 
-O programa foi escrito em Python e utiliza as seguintes bibliotecas:
+- 📊 `openpyxl`: Para ler dados da planilha Excel.
+- ⏱️ `time`: Para adicionar pausas entre as ações.
+- 🌐 `webbrowser`: Para abrir o WhatsApp Web.
+- 🖱️ `pyautogui`: Para automatizar interações na interface do WhatsApp Web.
+- 🔐 `urllib.parse`: Para codificar mensagens para URLs seguras.
+- 📜 `logging`: Para registrar erros durante a execução.
+- ⌨️ `pynput`: Para monitorar teclas pressionadas.
 
-- `openpyxl`: Para ler os dados da planilha Excel.
-- `time`: Para adicionar pausas entre as operações.
-- `webbrowser`: Para abrir o WhatsApp Web.
-- `pyautogui`: Para automatizar as interações com a interface do WhatsApp Web.
-- `urllib.parse`: Para codificar a mensagem para uma URL segura.
-- `logging`: Para registrar possíveis erros.
-- `pynput`: Para monitorar as teclas pressionadas pelo usuário.
+## 🚀 Como Usar
 
-## Por que foram utilizadas essas bibliotecas?
+### 1. Instalação das Dependências
 
-- `openpyxl`: Para ler dados de uma planilha Excel.
-- `time`: Para adicionar pausas entre as operações, garantindo que o programa não avance 
-  antes que uma operação seja concluída.
-- `webbrowser`: Para abrir o WhatsApp Web no navegador padrão.
-- `pyautogui`: Para automatizar as interações com a interface do WhatsApp Web, como clicar 
-  em botões e inserir texto.
-- `urllib.parse`: Para codificar a mensagem para uma URL segura, garantindo que caracteres 
-  especiais sejam tratados corretamente na mensagem.
-- `logging`: Para registrar possíveis erros que ocorram durante a execução do programa.
-- `pynput`: Para monitorar as teclas pressionadas pelo usuário e iniciar a execução do 
-  programa quando a combinação de teclas específica é pressionada.
+Instale as bibliotecas necessárias executando o seguinte comando:
 
-## Como utilizar o programa?
+```bash
+pip install openpyxl pyautogui pynput webbrowser
+```
 
-1. Instale as bibliotecas necessárias:
-   
-2. Ter uma planilha Excel com os dados dos clientes (pode ser personalizável):
+### 2. Preparando a Planilha
 
-PS: Salve a planilha com o nome `clientes.xlsx` e certifique-se de que ela está no mesmo 
-diretório que o arquivo do programa.
+Crie uma planilha Excel com as seguintes informações dos clientes:
 
-3. Execute o programa utilizando o comando:
+- Nome
+- Número de telefone
+- Data de vencimento do serviço
 
-python "nome_do_programa".py
+Salve a planilha com o nome clientes.xlsx no mesmo diretório do script.
 
-4. Quando quiser enviar as mensagens, pressione a combinação de teclas `Ctrl + Alt + F12`. 
-Isso abrirá o WhatsApp Web e iniciará o envio das mensagens.
+### 3. Executando o Programa
 
+Execute o script com o comando:
 
+```bash
+python nome_do_programa.py
+```
 
-Dúvidas sobre o Código
+### 4. Enviando as Mensagens
 
-## Por que abriu a planilha antes de mandar a mensagem?
-A planilha é aberta antes do envio das mensagens para garantir que os dados dos clientes 
-estejam atualizados no momento do envio.
+Para iniciar o envio das mensagens, pressione a combinação de teclas Ctrl + Alt + F12. O WhatsApp Web será aberto e as mensagens serão enviadas automaticamente.
 
+## 🔧 Funcionamento
 
-## Por que iterou sobre cada linha da planilha antes de enviar a mensagem?
-A iteração sobre cada linha da planilha permite que o programa envie mensagens personalizadas 
-para cada cliente, informando o vencimento do serviço de forma individualizada.
+- Pressione Ctrl + Alt + F12: O WhatsApp Web será aberto.
+- Leitura da Planilha: O programa lê os dados da planilha Excel.
+- Envio das Mensagens: O programa envia mensagens personalizadas para cada cliente, incluindo o vencimento do serviço e o link para pagamento.
+- Fechamento do WhatsApp Web: Após o envio das mensagens, o WhatsApp Web será fechado.
+- Logs de Erros: Qualquer erro durante a execução será registrado no arquivo erros.log.
 
+## 🔍 Contribuição
 
-## Funcionamento passo a passo do aplicativo
+Sinta-se à vontade para fazer contribuições! Para isso, basta seguir os seguintes passos:
 
-1. O usuário pressiona a combinação de teclas `Ctrl + Alt + F12`.
+- Faça um fork deste repositório.
+- Crie uma branch para sua modificação.
+- Faça o commit das suas alterações.
+- Abra um pull request.
 
-2. O programa abre o WhatsApp Web.
-
-3. O programa lê os dados dos clientes a partir da planilha Excel.
-
-4. Para cada cliente, o programa envia uma mensagem personalizada informando o vencimento 
-do serviço e fornecendo um link para pagamento.
-
-5. Após o envio das mensagens, o programa fecha o WhatsApp Web.
-
-6. O programa registra quaisquer erros que ocorram durante a execução no arquivo `erros.log`.
-
-
-## Explicações adicionais sobre o código
-
-### `on_press`
-
-`on_press` é uma função que é chamada quando uma tecla é pressionada.
-
-### `on_release`
-
-`on_release` é uma função que é chamada quando uma tecla é solta.
-
-### `listener`
-
-`listener` é um objeto que "escuta" as teclas e chama as funções `on_press` e `on_release`.
-
-### `getattr(sys, 'frozen', False)`
-
-`getattr(sys, 'frozen', False)` verifica se o script está sendo executado como um executável 
-gerado pelo PyInstaller. Se o script estiver congelado, o caminho de trabalho é alterado 
-para o diretório temporário onde os arquivos foram extraídos.
-
-### `os.chdir(sys._MEIPASS)`
-
-`os.chdir(sys._MEIPASS)` altera o diretório de trabalho para o diretório temporário onde 
-os arquivos foram extra
+## 📄 Licença
+Este projeto está licenciado sob a MIT License. O arquivo 'LICENSE' ainda será disponibilizado.
